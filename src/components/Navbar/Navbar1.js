@@ -1,9 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Cart from './Cart';
 
 export default function Navbar1() {
   return (
@@ -16,7 +17,7 @@ export default function Navbar1() {
   <Nav.Link href="#store" className="me-5">Store</Nav.Link>
   <Nav.Link href="about">About</Nav.Link>
 </Nav>
-          <Button variant="outline-success" className="me-2">Cart</Button>
+          <Cart variant="outline-success" className="me-2" ></Cart>
         </Navbar.Collapse>
       </Container>
     </Navbar>

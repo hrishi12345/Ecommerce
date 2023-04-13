@@ -1,0 +1,26 @@
+.cart-icon {
+ position: fixed;
+  top: 40px;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  margin-right: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+}
+.cart-items{
+    display: flex;
+  justify-content: space-between;
+}
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .list li {
+    margin: 0;
+    padding: 0;
+  }
