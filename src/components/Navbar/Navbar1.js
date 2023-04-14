@@ -13,9 +13,9 @@ export default function Navbar1() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mx-auto mx-3 px-3">
-  <Nav.Link href="#home" className="me-5">Home</Nav.Link>
-  <Nav.Link href="#store" className="me-5">Store</Nav.Link>
-  <Nav.Link href="about">About</Nav.Link>
+  <Nav.Link href="/" className="me-5">Home</Nav.Link>
+  <Nav.Link href="/store" className="me-5">Store</Nav.Link>
+  <Nav.Link href="/about">About</Nav.Link>
 </Nav>
           <Cart variant="outline-success" className="me-2" ></Cart>
         </Navbar.Collapse>

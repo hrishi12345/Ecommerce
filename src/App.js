@@ -1,19 +1,24 @@
-
-
+import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import About from './components/About/About.js';
+import Home from './Home.js';
 
-import Navbar1 from './components/Navbar/Navbar1.js';
-import Heading from './components/Heading/Heading.js';
-import Table from './components/Table/Tables.js';
+const ro=createRoutesFromElements(
+  <Route>
+    <Route path='/' element={<Home />}></Route>
+    <Route path='/about' element={<About />}></Route>
+  </Route>
+)
+
+const r=createBrowserRouter(ro)
 
 function App() {
   return (
-      <>
-      <Navbar1 />
-      <Heading />
-      <Table />
-  </>
+    <>
+      <RouterProvider router={r}/>
+     
+    </>
   );
 }
 

@@ -3,8 +3,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import CartContextProvider from '../../store/context';
+import { useContext } from 'react';
 
-export default function Table() {
+export default function Table(props) {
+  const CartCtx=useContext(CartContextProvider)
   const productsArr = [
     {
       title: 'Colors',
@@ -27,6 +30,15 @@ export default function Table() {
       imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
     }
   ];
+  const addToCartHandler = amount => {
+    CartCtx.addItem({
+      id: props.id,
+      name: props.name,
+      amount: amount,
+      price: props.price
+    });
+  };
+
 
   const items = productsArr.map((user) => {
     return (
@@ -35,7 +47,7 @@ export default function Table() {
         <Card.Body>
           <Card.Title>{user.title}</Card.Title>
           <Card.Text>{user.price}</Card.Text>
-          <Button variant="primary">Add To Cart</Button>
+          <Button variant="primary" onClick={addToCartHandler}>Add To Cart</Button>
         </Card.Body>
       </Card>
     );

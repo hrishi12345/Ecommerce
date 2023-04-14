@@ -70,6 +70,7 @@ export default function Cart() {
             </ul>
         )
     })
+ 
 
   return (
     <div>
