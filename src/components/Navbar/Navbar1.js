@@ -17,6 +17,7 @@ export default function Navbar1() {
   <Nav.Link href="/store" className="me-5">Store</Nav.Link>
   <Nav.Link href="/about">About</Nav.Link>
   <Nav.Link href="/contact">Contact Us</Nav.Link>
+  <Nav.Link href="/login">Login</Nav.Link>
 </Nav>
           <Cart variant="outline-success" className="me-2" ></Cart>
         </Navbar.Collapse>

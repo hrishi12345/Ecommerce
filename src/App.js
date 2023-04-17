@@ -4,12 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import About from './components/About/About.js';
 import Home from './Home.js';
 import Contact from './components/Contact/Contact.js';
+import AuthForm from './components/Navbar/Login.js';
 
 const ro=createRoutesFromElements(
   <Route>
     <Route path='/' element={<Home />}></Route>
     <Route path='/about' element={<About />}></Route>
     <Route path='/contact' element={<Contact />}></Route>
+    <Route path='/login' element={<AuthForm />}></Route>
   </Route>
 )
 
