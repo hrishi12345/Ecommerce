@@ -1,28 +1,25 @@
-import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
+import {Route, Routes, Navigate} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import About from './components/About/About.js';
 import Home from './Home.js';
 import Contact from './components/Contact/Contact.js';
+
+import { useContext } from 'react';
+import { AuthContext } from './store/auth_context.js';
 import AuthForm from './components/Navbar/Login.js';
 
-const ro=createRoutesFromElements(
-  <Route>
-    <Route path='/' element={<Home />}></Route>
-    <Route path='/about' element={<About />}></Route>
-    <Route path='/contact' element={<Contact />}></Route>
-    <Route path='/login' element={<AuthForm />}></Route>
-  </Route>
-)
-
-const r=createBrowserRouter(ro)
-
 function App() {
+  const isLog = useContext(AuthContext);
+
   return (
-    <>
-      <RouterProvider router={r}/>
-     
-    </>
+    <Routes>
+      {!isLog.isLogin && <Route path='*' element={<Navigate to='/login' />} />}
+      {isLog.isLogin && <Route path='/' element={<Home />} />}
+      {isLog.isLogin && <Route path='/about' element={<About />} />}
+      {isLog.isLogin && <Route path='/contact' element={<Contact />} />}
+      <Route path='/login' element={<AuthForm />} />
+    </Routes>
   );
 }
 

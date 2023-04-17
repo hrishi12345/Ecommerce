@@ -5,8 +5,15 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Cart from './Cart';
+import { useContext } from 'react';
+import { AuthContext } from '../../store/auth_context';
 
 export default function Navbar1() {
+
+  const isLog=useContext(AuthContext)
+  const LogoutHandler=()=>{
+    isLog.logout()
+  }
   return (
       <Navbar bg="light" expand="lg">
       <Container>
@@ -19,6 +26,7 @@ export default function Navbar1() {
   <Nav.Link href="/contact">Contact Us</Nav.Link>
   <Nav.Link href="/login">Login</Nav.Link>
 </Nav>
+          {isLog.isLogin && <button onClick={LogoutHandler}>Logout</button>}
           <Cart variant="outline-success" className="me-2" ></Cart>
         </Navbar.Collapse>
       </Container>

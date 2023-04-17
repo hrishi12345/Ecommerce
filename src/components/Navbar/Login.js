@@ -1,9 +1,11 @@
-import { useState ,useRef ,useContext} from 'react';
+import React, { useState ,useRef ,useContext} from 'react';
 
 import classes from './Login.module.css';
 // import { json } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../../store/auth_context';
+import Navbar1 from './Navbar1';
+import Heading from '../Heading/Heading';
 
 const AuthForm = () => {
   const enteredemail=useRef()
@@ -64,6 +66,9 @@ const AuthForm = () => {
     }
   
   return (
+    <React.Fragment>
+        <Navbar1 />
+        <Heading />
     <section className={classes.auth}>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={onSubmithandler}>
@@ -88,6 +93,7 @@ const AuthForm = () => {
         </div>
       </form>
     </section>
+    </React.Fragment>
   );
 };
 
